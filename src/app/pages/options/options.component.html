@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar  class="custom-background-color">
+    <ion-row style="margin-top: 0.5rem">
+      <ion-title class="ion-text-center">
+        José Ramírez
+      </ion-title>
+    </ion-row>
+   <ion-row style="margin-top: 2rem" class="ion-text-center">
+     <ion-title class="ion-text-center">
+     <img src="assets/logo.png">
+       </ion-title>
+   </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid class="menu-options">
+      <ion-row class="ion-text-center">
+        <ion-col  >
+          <ion-button class="options-buttons" (click)="go('/calculator')">Calculadora</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-text-center">
+        <ion-col  >
+          <ion-button class="options-buttons" (click)="go('/services')">Servicios</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>
+<app-footer></app-footer>

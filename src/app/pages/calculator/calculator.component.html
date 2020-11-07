@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar  class="custom-background-color">
+    <ion-title class="ion-text-center">
+      Calculadora
+    </ion-title>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+          <ion-back-button color="white"></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding ion-text-center">
+    <form [formGroup]="forma" (ngSubmit)="submit()">
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <ion-list>
+                        <ion-item>
+                            <ion-label>Operación:</ion-label>
+                        </ion-item>
+                        <ion-select class="input-formulario" formControlName="operacion">
+                            <ion-select-option *ngFor="let item of operations" [value]="item.id">{{ item.operation }}
+                            </ion-select-option>
+                        </ion-select>
+                        <ion-item>
+                            <ion-label position="floating">Numero A</ion-label>
+                            <ion-input class="input-formulario" type="number" name="numero1" formControlName="numero1"></ion-input>
+                        </ion-item>
+                        <ion-text color="danger" *ngIf="numero1Valido" slot="end"><sub>*Valor requerido</sub>
+                        </ion-text>
+                        <ion-item>
+                            <ion-label position="floating">Numero B</ion-label>
+                            <ion-input class="input-formulario" color="danger" type="number" name="numero2"
+                                       formControlName="numero2"></ion-input>
+                        </ion-item>
+                        <ion-text color="danger" *ngIf="numero2Valido"><sub>*Valor requerido</sub></ion-text>
+                        <br>
+
+                    </ion-list>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col class="ion-text-center " style="margin-bottom: 3rem" >
+                  <ion-button type="submit" disabled="{{isDisable}}" expand="block" class="calcular-button">Calcular</ion-button>
+                </ion-col>
+            </ion-row>
+          <ion-label style="color: black; font-size: 2rem">Resultado</ion-label>
+          <ion-input class="input-resultado" type="text" readonly="" name="resultado" value="{{resultado}}"></ion-input>
+        </ion-grid>
+    </form>
+</ion-content>
+<app-footer></app-footer>

@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="custom-background-color">
+    <ion-title class="ion-text-center">
+      Servicios
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button color="white"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-text-center"  [scrollEvents]="true">
+  <h5>Gastos: </h5>
+    <app-card class="m-top" [servicio]="data"></app-card>
+<ion-button class="calcular-button" size="large">Actualizar</ion-button>
+</ion-content>
+<app-footer></app-footer>
